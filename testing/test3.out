@@ -1,0 +1,64 @@
+DB61B System.  Version 1.0
+Contents of simple:
+  far ultraviolet x-ray gamma
+  red green blue
+  violet indigo near ultraviolet
+
+Loaded students.db
+Search results:
+  Armstrong Thomas 104 F EECS 2003
+  Knowles Jason 101 F EECS 2003
+  Chan Valerie 102 S Math 2003
+  Chan Yangfan 106 F LSUnd 2003
+  Xavier Jonathan 103 S LSUnd 2004
+  Brown Shana 105 S EECS 2004
+Search results:
+  Armstrong Thomas 104 F EECS 2003
+  Knowles Jason 101 F EECS 2003
+  Chan Valerie 102 S Math 2003
+  Chan Yangfan 106 F LSUnd 2003
+  Xavier Jonathan 103 S LSUnd 2004
+  Brown Shana 105 S EECS 2004
+Contents of permute:
+  Armstrong Thomas 104 F EECS 2003
+  Knowles Jason 101 F EECS 2003
+  Chan Valerie 102 S Math 2003
+  Chan Yangfan 106 F LSUnd 2003
+  Xavier Jonathan 103 S LSUnd 2004
+  Brown Shana 105 S EECS 2004
+Search results:
+  105 Brown Shana S 2004 EECS
+  101 Knowles Jason F 2003 EECS
+  102 Chan Valerie S 2003 Math
+  103 Xavier Jonathan S 2004 LSUnd
+  104 Armstrong Thomas F 2003 EECS
+  106 Chan Yangfan F 2003 LSUnd
+Contents of projection:
+  F
+  S
+Contents of load:
+  106
+  104
+  105
+  102
+  103
+  101
+Contents of folks:
+  George 60 Syracuse
+  Martin 80 Buffalo
+  Brian 10 Ann Arbor
+  Ann 30 Detroit
+Stored folks.db
+Error: unexpected token: ''None''
+Contents of folks:
+  George 60 Syracuse
+  Martin 80 Buffalo
+  Brian 10 Ann Arbor
+  Ann 30 Detroit
+Loaded folks.db
+Contents of folks:
+  George 60 Syracuse
+  Martin 80 Buffalo
+  Ann 30 Detroit
+  Brian 10 Ann Arbor
+

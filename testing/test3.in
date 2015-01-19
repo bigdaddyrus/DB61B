@@ -1,0 +1,47 @@
+/* test for create table. */
+create table simple (First, Second, Third);
+
+insert into simple values 'red', 'green', 'blue';
+insert into simple values 'violet', 'indigo', 'near ultraviolet';
+insert into simple values 'far ultraviolet', 'x-ray', 'gamma';
+
+print simple;
+
+/* test for select statement and select clause */
+load students;
+
+select Lastname, Firstname, SID, SemEnter, Major, YearEnter from students;
+
+select Lastname, Firstname, SID,
+       SemEnter, Major, YearEnter
+   from students;
+
+create table permute
+  as select Lastname, Firstname, SID, SemEnter, Major, YearEnter from students;
+print permute;
+select SID, Lastname, Firstname, SemEnter, YearEnter, Major from permute;
+
+create table projection as select SemEnter from students;
+print projection;
+
+create table load as select SID from students;
+print load;
+
+/* test for store */
+create table folks (Name, Age, Birthplace);
+insert into folks values 'Martin', '80', 'Buffalo';
+insert into folks values 'George', '60', 'Syracuse';
+insert into folks values 'Ann', '30', 'Detroit';
+insert into folks values 'Brian', '10', 'Ann Arbor';
+
+print folks;
+store folks;
+
+create table folks ('None');
+print folks;
+
+load folks;
+print folks;
+
+quit;
+

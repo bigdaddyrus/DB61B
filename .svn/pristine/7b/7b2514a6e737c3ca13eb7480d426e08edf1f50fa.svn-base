@@ -1,0 +1,22 @@
+package db61b;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+/** Tests for DataBase */
+public class DBTest {
+
+    @Test
+    public void testGet() {
+    /* Run the unit tests in this file. */
+        Database d = new Database();
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        Row r = new Row(new String[] {"Base", "Test", "Yay"});
+        t.add(r);
+        d.put("right", t);
+        assertEquals(t, d.get("right"));
+    }
+    public static void main(String... args) {
+        System.exit(ucb.junit.textui.runClasses(DBTest.class));
+    }
+}

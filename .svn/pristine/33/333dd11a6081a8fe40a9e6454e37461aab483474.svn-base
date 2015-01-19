@@ -1,0 +1,40 @@
+package db61b;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+/** Basic Tests for Row */
+public class RowTest {
+
+    @Test 
+    public void testRowSize() {
+    /* Run the unit tests in this file. */
+        Row r = new Row(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(3, r.size());
+    }
+
+    @Test 
+    public void testRowGet() {
+    /* Run the unit tests in this file. */
+        Row r = new Row(new String[] {"Basic", "Test", "Yay"});
+        assertEquals("Yay", r.get(2));
+    }
+
+    @Test 
+    public void testRowEquals() {
+    /* Run the unit tests in this file. */
+        Row r = new Row(new String[] {"Basic", "Test", "Yay"});
+        Row b = new Row(new String[] {"Basic", "Test", "Yay"});
+        assertTrue(r.equals(b));
+        String[] c = new String[] {"Basic", "Test", "Yay"};
+        assertFalse(r.equals(c));
+        Row d = new Row(new String[] {"Basic", "Test"});
+        assertFalse(r.equals(d));
+    }
+
+
+    public static void main(String... args) {
+        System.exit(ucb.junit.textui.runClasses(RowTest.class));
+
+    }       
+}

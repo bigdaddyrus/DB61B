@@ -1,0 +1,63 @@
+package db61b;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+/** Basic Tests for Table */
+public class TableTest {
+
+    @Test 
+    public void testColumnSize() {
+    /* Run the Column size tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(3, t.columns());
+        Table td = new Table(new String[] {"Basic", "dude", "Test", "Yay"});
+        assertEquals(4, td.columns());
+    }
+
+    @Test 
+    public void testColumnGet() {
+    /* Run the get Column tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals("Yay", t.getTitle(2));
+    }
+
+    @Test 
+    public void testFindColumn() {
+    /* Run the Find Column tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(1, t.findColumn("Yay"));
+    }
+
+    @Test
+    public void testRow() {
+    /* Run the Add Row tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(0, t.size());
+        Row r = new Row(new String[] {"Base", "Test", "Yay"});
+        assertTrue(t.add(r));
+        assertEquals(1, t.size());
+        Row k = new Row(new String[] {"Base", "Test", "Yay"});
+        assertFalse(t.add(k));
+        assertEquals(1, t.size());
+        Row e = new Row(new String[] {"Base", "Test", "Yay", "Vandalize"});
+        try {
+            t.add(e);
+        } catch (DBException d) {
+            System.out.printf("Error: %s%n", d.getMessage());
+        }
+    }
+
+    //@Test
+    public void testPrint() {
+    /* Run the print in this file. */
+        Table t = db61b.Table.readTable("enrolledTest");
+        t.print();
+    }
+
+
+    public static void main(String... args) {
+        System.exit(ucb.junit.textui.runClasses(TableTest.class));
+
+    }       
+}

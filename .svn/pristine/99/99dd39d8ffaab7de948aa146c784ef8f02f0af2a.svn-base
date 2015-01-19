@@ -1,0 +1,49 @@
+package db61b;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+/** Basic Tests for Row */
+public class TableTest {
+
+    @Test 
+    public void testColumnSize() {
+    /* Run the unit tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(3, t.columns());
+        Table td = new Table(new String[] {"Basic", "dude", "Test", "Yay"});
+        assertEquals(4, td.columns());
+    }
+
+    @Test 
+    public void testColumnGet() {
+    /* Run the unit tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals("Yay", t.getTitle(2));
+    }
+
+    @Test 
+    public void testFindColumn() {
+    /* Run the unit tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(1, t.findColumn("Yay"));
+    }
+
+    @Test
+    public void testRow() {
+    /* Run the unit tests in this file. */
+        Table t = new Table(new String[] {"Basic", "Test", "Yay"});
+        assertEquals(0, t.size());
+        Row r = new Row(new String[] {"Base", "Test", "Yay"});
+        assertTrue(t.add(r));
+        assertEquals(1, t.size());
+        assertFalse(t.add(r));
+        assertEquals(1, t.size());
+    }
+
+
+    public static void main(String... args) {
+        System.exit(ucb.junit.textui.runClasses(TableTest.class));
+
+    }       
+}
